@@ -11,17 +11,35 @@ package hospital;
  * @author student
  */
 public class MedicamentStory {
-    //aptekarz
-    Recipe recipe = new Recipe(); //recepta
-    //lekarstwo
-    
-    public MedicamentStory() {
+    Druggist druggist = new Druggist();
+    Recipe recipe = new Recipe();
+
+    public Druggist getDruggist() {
+        return druggist;
+    }
+
+    public Recipe getRecipe() {
+        return recipe;
+    }
+
+    public void setDruggist(Druggist druggist) {
+        this.druggist = druggist;
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
     }
 
     @Override
     public String toString() {
-        return "MedicamentStory{" + '}';
+        return "MedicamentStory{" + "druggist=" + druggist + ", recipe=" + recipe + '}';
     }
+     
+
+    public MedicamentStory() {
+    }
+
+
     
     
 }
