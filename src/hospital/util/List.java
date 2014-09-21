@@ -4,11 +4,13 @@
  */
 package hospital.util;
 
+import java.io.Serializable;
+
 /**
  *
  * @author student
  */
-public class List<T> implements Storage<T> {
+public class List<T> implements Storage<T>, Serializable {
 
     private Object[] tab = new Object[10];
     private int current;

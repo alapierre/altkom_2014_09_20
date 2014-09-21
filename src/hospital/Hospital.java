@@ -5,6 +5,12 @@
 package hospital;
 
 import hospital.util.List;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 /**
@@ -12,13 +18,27 @@ import java.util.Scanner;
  * @author student
  */
 public class Hospital {
+    
+    protected static final String HOSPITALOUT = "hospital.out";
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
 
-        List<Patient> list = new List<>();
+        File file = new File(HOSPITALOUT);
+        
+        List<Patient> list = null;
+        
+        if(file.exists()) {
+            list = loadFromBinaryFile();
+            if(list == null) list = new List<>();
+            System.out.println("Ładuję dane");
+        } else {
+            list = new List<>();
+            
+            System.out.println("brak pliku z danymi");
+        }
         
         Scanner keyboard = new Scanner(System.in);
         
@@ -44,6 +64,9 @@ public class Hospital {
                         System.out.println(tmp.getName() + " " + tmp.getLastName());
                     }
                     
+                    break;
+                case 3 :
+                    saveToBinaryFile(list);
                     break;
                 case 0:
                     break petla_glowna;
@@ -91,9 +114,43 @@ public class Hospital {
 
         System.out.println("1. Przyjmij pacjenta na oddział");
         System.out.println("2. Wyświetl listę pacjentów");
+        System.out.println("3. Zapisz listę pacjentów");
         
         System.out.println("0. Wyście");
 
+    }
+
+    private static void saveToBinaryFile(List list) {
+
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(HOSPITALOUT)) ) {
+            
+            out.writeObject(list);
+            
+        } catch (IOException ex) {
+            System.out.println("błąd zapisu");
+            ex.printStackTrace();
+        }
+        
+    }
+    
+    public static List loadFromBinaryFile() {
+        
+        List<Person> list = null;
+        
+        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(HOSPITALOUT))) {
+            
+            list = (List<Person>) in.readObject();
+            
+            return list;
+            
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } catch (ClassNotFoundException ex)  {
+            ex.printStackTrace();
+        }
+        
+        return list;
+        
     }
 
 

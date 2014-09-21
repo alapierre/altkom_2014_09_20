@@ -4,6 +4,7 @@
  */
 package hospital;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -68,7 +69,7 @@ public class Patient extends Person {
 
     @Override
     public String toString() {
-        return "Patient{" + "symptoms=" + symptoms + ", history=" + history + ", alergies=" + alergies + ", insurance=" + insurance + ", attendingDoctor=" + attendingDoctor + ", ward=" + ward + ", dietPlan=" + dietPlan + ", dateOfAdmission=" + dateOfAdmission + ", dateOfDischarge=" + dateOfDischarge + '}';
+        return super.toString() + " Patient{" + "symptoms=" + symptoms + ", history=" + history + ", alergies=" + alergies + ", insurance=" + insurance + ", attendingDoctor=" + attendingDoctor + ", ward=" + ward + ", dietPlan=" + dietPlan + ", dateOfAdmission=" + dateOfAdmission + ", dateOfDischarge=" + dateOfDischarge + '}';
     }
     
     

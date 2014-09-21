@@ -4,6 +4,7 @@
  */
 package test;
 
+import hospital.Patient;
 import hospital.Person;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -46,7 +47,7 @@ public class FileTest {
         
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("object.out") {})) {
             
-            Person p = (Person) in.readObject();
+            Patient p = (Patient) in.readObject();
             
             System.out.println(p);
             
@@ -63,7 +64,7 @@ public class FileTest {
         
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("object.out")) ) {
             
-            Person p = new Person();
+            Patient p = new Patient();
             p.setName("Ala");
             p.setLastName("Kowalska");
             
