@@ -5,10 +5,21 @@
  */
 package hospital;
 
+import java.util.Date;
+
 /**
  *
  * @author root
  */
 public class Medicament {
+        /**
+     * Lekarstwo 
+     */
+    
+    private String name; //pacjent
+    private String dosage; //dawkowanie
+    private Date production;//data produkcji
+    private String describe; // opis 
+
     
 }
