@@ -13,9 +13,9 @@ import java.util.Date;
  */
 public class Patient extends Person {
     
-    private ArrayList<Symptom> symptoms = new ArrayList<>();    
-    private ArrayList<Object> history = new ArrayList<>();    
-    private ArrayList<Object> alergies = new ArrayList<>();
+    private ArrayList<Symptom> symptoms;    
+    private ArrayList<Object> history;    
+    private ArrayList<String> alergies;
        
     private Object insurance;
     private Doctor attendingDoctor;
@@ -23,6 +23,12 @@ public class Patient extends Person {
     
     private Date dateOfAdmission;
     private Date dateOfDischarge;
+
+    public Patient() {
+        symptoms = new ArrayList<>(); 
+        history = new ArrayList<>();
+        alergies = new ArrayList<>();    
+    }
     
     public void addSymptom(Symptom symptom)
     {
@@ -60,7 +66,7 @@ public class Patient extends Person {
         return history;
     }
 
-    public ArrayList<Object> getAlergies() {
+    public ArrayList<String> getAlergies() {
         return alergies;
     }
 
@@ -96,7 +102,7 @@ public class Patient extends Person {
         this.history = history;
     }
 
-    public void setAlergies(ArrayList<Object> alergies) {
+    public void setAlergies(ArrayList<String> alergies) {
         this.alergies = alergies;
     }
 
