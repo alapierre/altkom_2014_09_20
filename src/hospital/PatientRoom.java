@@ -18,7 +18,7 @@ public class PatientRoom
     private String roomName;
     private String roomType;
     private List<Patient> patientList = new ArrayList();
-    private List associatedPersonel = new ArrayList();
+    private List<HospitalEmploee> associatedPersonel = new ArrayList();
 
     public PatientRoom() {}
 
