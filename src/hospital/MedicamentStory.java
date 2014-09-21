@@ -11,18 +11,31 @@ package hospital;
  * @author student
  */
 public class MedicamentStory {
-    Druggist druggist = new Druggist();
-    Recipe recipe = new Recipe();
-    //lekarstwo
 
- 
-    @Override
-    public String toString() {
-        return "MedicamentStory{" + "druggist=" + druggist + ", recipe=" + recipe + '}';
-    }
-     
+
+    private Druggist druggist;
+    private Recipe recipe;
+    /*lekarstwo*/
+    private int count;/*ilosc lekarstw*/
+    
+    
     public MedicamentStory() {
     }
+
+    public MedicamentStory(Druggist druggist, Recipe recipe, int Count) {
+        this.druggist = druggist;
+        this.recipe = recipe;
+        this.count = Count;
+    }
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int Count) {
+        this.count = count;
+    }
+        
+
 
    public Druggist getDruggist() {
         return druggist;
@@ -40,6 +53,9 @@ public class MedicamentStory {
         this.recipe = recipe;
     }
 
-    
+    @Override
+    public String toString() {
+        return "MedicamentStory{" + "druggist=" + druggist + ", recipe=" + recipe + '}';
+    }
     
 }

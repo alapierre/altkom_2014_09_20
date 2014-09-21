@@ -13,16 +13,23 @@ import java.util.Date;
  */
 public class Patient extends Person {
     
-    private ArrayList<Symptom> symptoms = new ArrayList<Symptom>();    
-    private ArrayList<Object> history = new ArrayList<Object>();    
-    private ArrayList<Object> alergies = new ArrayList<Object>();
+    private ArrayList<Symptom> symptoms;    
+    private ArrayList<Object> history;    
+    private ArrayList<String> alergies;
        
     private Object insurance;
     private Doctor attendingDoctor;
-    private Object ward;
+    private PatientRoom ward;
+    private Menu dietPlan;
     
     private Date dateOfAdmission;
     private Date dateOfDischarge;
+
+    public Patient() {
+        symptoms = new ArrayList<>(); 
+        history = new ArrayList<>();
+        alergies = new ArrayList<>();    
+    }
     
     public void addSymptom(Symptom symptom)
     {
@@ -51,6 +58,12 @@ public class Patient extends Person {
     {
         setDateOfDischarge(date);
     }
+
+    @Override
+    public String toString() {
+        return "Patient{" + "symptoms=" + symptoms + ", history=" + history + ", alergies=" + alergies + ", insurance=" + insurance + ", attendingDoctor=" + attendingDoctor + ", ward=" + ward + ", dietPlan=" + dietPlan + ", dateOfAdmission=" + dateOfAdmission + ", dateOfDischarge=" + dateOfDischarge + '}';
+    }
+    
     
     
     /*********** Getters ***********/    
@@ -60,7 +73,7 @@ public class Patient extends Person {
         return history;
     }
 
-    public ArrayList<Object> getAlergies() {
+    public ArrayList<String> getAlergies() {
         return alergies;
     }
 
@@ -72,7 +85,7 @@ public class Patient extends Person {
         return attendingDoctor;
     }
 
-    public Object getWard() {
+    public PatientRoom getWard() {
         return ward;
     }
 
@@ -83,7 +96,10 @@ public class Patient extends Person {
     public Date getDateOfDischarge() {
         return dateOfDischarge;
     }
-
+  
+    public Menu getDietPlan() {
+        return dietPlan;
+    }
     
     /*********** Setters ***********/ 
     
@@ -96,7 +112,7 @@ public class Patient extends Person {
         this.history = history;
     }
 
-    public void setAlergies(ArrayList<Object> alergies) {
+    public void setAlergies(ArrayList<String> alergies) {
         this.alergies = alergies;
     }
 
@@ -108,7 +124,7 @@ public class Patient extends Person {
         this.attendingDoctor = attendingDoctor;
     }
 
-    public void setWard(Object ward) {
+    public void setWard(PatientRoom ward) {
         this.ward = ward;
     }
 
@@ -119,4 +135,9 @@ public class Patient extends Person {
      private void setDateOfDischarge(Date dateOfDischarge) {
         this.dateOfDischarge = dateOfDischarge;
     }
+     
+     public void setDietPlan(Menu dietPlan) {
+        this.dietPlan = dietPlan;
+    }
+    
 }
