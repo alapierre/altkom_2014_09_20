@@ -19,7 +19,8 @@ public class Patient extends Person {
        
     private Object insurance;
     private Doctor attendingDoctor;
-    private Object ward;
+    private PatientRoom ward;
+    private Menu dietPlan;
     
     private Date dateOfAdmission;
     private Date dateOfDischarge;
@@ -78,7 +79,7 @@ public class Patient extends Person {
         return attendingDoctor;
     }
 
-    public Object getWard() {
+    public PatientRoom getWard() {
         return ward;
     }
 
@@ -114,7 +115,7 @@ public class Patient extends Person {
         this.attendingDoctor = attendingDoctor;
     }
 
-    public void setWard(Object ward) {
+    public void setWard(PatientRoom ward) {
         this.ward = ward;
     }
 
