@@ -67,4 +67,7 @@ public class Hospital {
         System.out.println("0. Wyście");
 
     }
+
+
+
 }
