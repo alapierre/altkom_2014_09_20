@@ -5,17 +5,28 @@
  */
 package hospital;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Jarek
  */
-public class PatientRoom 
+public class PatientRoom
 {
     private int roomId;
     private String roomName;
     private String roomType;
-    private Object patientList;
-    private Object associatedPersonel;
+    private List patientList = new ArrayList();
+    private List associatedPersonel = new ArrayList();
+
+    public PatientRoom() {}
+
+    public PatientRoom(int roomId, String roomName, String roomType) {
+        this.roomId = roomId;
+        this.roomName = roomName;
+        this.roomType = roomType;
+    }
 
     public int getRoomId() {
         return roomId;
@@ -41,21 +52,21 @@ public class PatientRoom
         this.roomType = roomType;
     }
 
-    public Object getPatientList() {
+    public List getPatientList() {
         return patientList;
     }
 
-    public void setPatientList(Object patientList) {
+    public void setPatientList(List patientList) {
         this.patientList = patientList;
     }
 
-    public Object getAssociatedPersonel() {
+    public List getAssociatedPersonel() {
         return associatedPersonel;
     }
 
-    public void setAssociatedPersonel(Object associatedPersonel) {
+    public void setAssociatedPersonel(List associatedPersonel) {
         this.associatedPersonel = associatedPersonel;
     }
-    
-    
+
+
 }
