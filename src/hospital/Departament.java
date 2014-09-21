@@ -5,7 +5,8 @@
 package hospital;
 
 /**
- *
+ * Oddział szpitala 
+ * 
  * @author student
  */
 public class Departament {
