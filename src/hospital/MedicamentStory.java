@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package hospital;
 
 /**
@@ -11,16 +12,32 @@ package hospital;
  */
 public class MedicamentStory {
 
+
     private Druggist druggist;
     private Recipe recipe;
     /*lekarstwo*/
     private int count;/*ilosc lekarstw*/
-
-
+    
+    
     public MedicamentStory() {
     }
 
-    public Druggist getDruggist() {
+    public MedicamentStory(Druggist druggist, Recipe recipe, int Count) {
+        this.druggist = druggist;
+        this.recipe = recipe;
+        this.count = Count;
+    }
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int Count) {
+        this.count = count;
+    }
+        
+
+
+   public Druggist getDruggist() {
         return druggist;
     }
 
@@ -40,4 +57,5 @@ public class MedicamentStory {
     public String toString() {
         return "MedicamentStory{" + "druggist=" + druggist + ", recipe=" + recipe + '}';
     }
+    
 }
