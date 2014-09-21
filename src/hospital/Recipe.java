@@ -15,8 +15,16 @@ import java.util.Date;
 public class Recipe {
     //lekarstwo
     private String dosage; //dawkowanie
-    //pacjent
-    Doctor doctor = new Doctor();
+    Patient patient = new Patient(); //pacjent
+    Doctor doctor = new Doctor(); //lekarz
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
     Date date = new Date();//data wypisania recepty
     
    
