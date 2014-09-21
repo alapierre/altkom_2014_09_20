@@ -12,7 +12,7 @@ package hospital;
  */
 public class Laboratory {
     String nazwa = new String();
-
+ 
     public void setNazwa(String nazwa) {
         this.nazwa = nazwa;
     }
