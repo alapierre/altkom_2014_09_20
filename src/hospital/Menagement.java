@@ -18,7 +18,7 @@ public class Menagement extends Person {
 
     @Override
     public String toString() {
-        return "MenagementImpl{" + "resposibility=" + resposibility + ", name=" + getName() + ", surname=" + getLastName() + ", pesel=" + /*getPesel() +*/ '}';
+        return "MenagementImpl{" + "resposibility=" + resposibility + ", name=" + getName() + ", lastname=" + getLastName() + ", pesel=" + /*getPesel() +*/ '}';
     }
 
     

@@ -12,7 +12,16 @@ public class Person {
     
     private String name;
     private String lastName;
+    private String nip;
 
+    public String getNip() {
+        return nip;
+    }
+
+    public void setNip(String nip) {
+        this.nip = nip;
+    }
+    
     public String getName() {
         return name;
     }
@@ -31,9 +40,8 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" + "name=" + name + ", lastName=" + lastName + '}';
+        return "Person{" + "name=" + name + ", lastName=" + lastName + ", nip=" + nip + '}';
     }
-    
     
     
 }
