@@ -11,17 +11,30 @@ package hospital;
  * @author student
  */
 public class MedicamentStory {
+
+
     private Druggist druggist;
     private Recipe recipe;
     /*lekarstwo*/
-    private int Count;/*ilosc lekarstw*/
+    private int count;/*ilosc lekarstw*/
     
     
     public MedicamentStory() {
     }
-     
 
-     
+    public MedicamentStory(Druggist druggist, Recipe recipe, int Count) {
+        this.druggist = druggist;
+        this.recipe = recipe;
+        this.count = Count;
+    }
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int Count) {
+        this.count = count;
+    }
+        
 
 
    public Druggist getDruggist() {

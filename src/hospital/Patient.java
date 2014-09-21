@@ -42,7 +42,14 @@ public class Patient extends Person {
     }
         
     public void payBill() {
-             
+        if(insurance == null)
+        {
+            System.out.println("Zapłacono z własnej kieszeni");
+        }
+        else
+        {            
+            System.out.println("Zapłacono z ubezpieczenia");
+        }
     }
     
     public void takeMeds() {
@@ -58,6 +65,12 @@ public class Patient extends Person {
     {
         setDateOfDischarge(date);
     }
+
+    @Override
+    public String toString() {
+        return "Patient{" + "symptoms=" + symptoms + ", history=" + history + ", alergies=" + alergies + ", insurance=" + insurance + ", attendingDoctor=" + attendingDoctor + ", ward=" + ward + ", dietPlan=" + dietPlan + ", dateOfAdmission=" + dateOfAdmission + ", dateOfDischarge=" + dateOfDischarge + '}';
+    }
+    
     
     
     /*********** Getters ***********/    
@@ -90,7 +103,10 @@ public class Patient extends Person {
     public Date getDateOfDischarge() {
         return dateOfDischarge;
     }
-
+  
+    public Menu getDietPlan() {
+        return dietPlan;
+    }
     
     /*********** Setters ***********/ 
     
@@ -126,4 +142,9 @@ public class Patient extends Person {
      private void setDateOfDischarge(Date dateOfDischarge) {
         this.dateOfDischarge = dateOfDischarge;
     }
+     
+     public void setDietPlan(Menu dietPlan) {
+        this.dietPlan = dietPlan;
+    }
+    
 }

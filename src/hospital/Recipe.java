@@ -13,11 +13,25 @@ import java.util.Date;
  * @author student
  */
 public class Recipe {
-    //lekarstwo
+    
+    /**
+     * Lekarstwo 
+     */
     private String dosage; //dawkowanie
-    Patient patient = new Patient(); //pacjent
-    Doctor doctor = new Doctor(); //lekarz
+    private Patient patient; //pacjent
+    private Doctor doctor; //lekarz
+    private Date date;//data wypisania recepty
 
+    public Recipe(String dosage, Patient patient, Doctor doctor, Date date) {
+        this.dosage = dosage;
+        this.patient = patient;
+        this.doctor = doctor;
+        this.date = date;
+    }
+
+    public Recipe() {
+    }
+    
     public void setPatient(Patient patient) {
         this.patient = patient;
     }
@@ -25,12 +39,7 @@ public class Recipe {
     public Patient getPatient() {
         return patient;
     }
-    Date date = new Date();//data wypisania recepty
-    
    
-    public Recipe() {
-    }
-
     @Override
     public String toString() {
         return "Recipe{" + "dosage=" + dosage + ", date=" + date + '}';
