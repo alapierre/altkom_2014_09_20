@@ -14,11 +14,12 @@ import java.util.Date;
  */
 public class Recipe {
     //lekarstwo
-    String dosage; //dawkowanie
+    private String dosage; //dawkowanie
     //pacjent
-    //Doctor doctor = new Doctor();
+    Doctor doctor = new Doctor();
     Date date = new Date();//data wypisania recepty
-
+    
+   
     public Recipe() {
     }
 
@@ -33,6 +34,14 @@ public class Recipe {
 
     public Date getDate() {
         return date;
+    }
+    
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
     }
 
     public void setDosage(String dosage) {

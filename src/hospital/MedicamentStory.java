@@ -13,8 +13,18 @@ package hospital;
 public class MedicamentStory {
     Druggist druggist = new Druggist();
     Recipe recipe = new Recipe();
+    //lekarstwo
 
-    public Druggist getDruggist() {
+ 
+    @Override
+    public String toString() {
+        return "MedicamentStory{" + "druggist=" + druggist + ", recipe=" + recipe + '}';
+    }
+     
+    public MedicamentStory() {
+    }
+
+   public Druggist getDruggist() {
         return druggist;
     }
 
@@ -29,16 +39,6 @@ public class MedicamentStory {
     public void setRecipe(Recipe recipe) {
         this.recipe = recipe;
     }
-
-    @Override
-    public String toString() {
-        return "MedicamentStory{" + "druggist=" + druggist + ", recipe=" + recipe + '}';
-    }
-     
-
-    public MedicamentStory() {
-    }
-
 
     
     
