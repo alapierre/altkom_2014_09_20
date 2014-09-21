@@ -8,21 +8,9 @@ package hospital;
  *
  * @author student
  */
-public enum Menu {
+public class Menu {
     
-    breakfast, diner, supper;
-
-    public static Menu getBreakfast() {
-        return breakfast;
-    }
-
-    public static Menu getDiner() {
-        return diner;
-    }
-
-    public static Menu getSupper() {
-        return supper;
-    }
+  
     
     
    
