@@ -13,8 +13,20 @@ import java.util.Date;
  */
 public class Patient extends Person {
     
-    ArrayList<Object> symptoms = new ArrayList<Object>();
+    ArrayList<Symptom> symptoms = new ArrayList<Symptom>();    
+    ArrayList<Object> history = new ArrayList<Object>();    
+    ArrayList<Object> alergies = new ArrayList<Object>();
+    
     Object insurance;
+    Doctor attendingDoctor;
+    Object ward;
+    
+    public void addSymptom()
+    {
+        
+    }
+    
+    
     
     
     public void payBill() {
