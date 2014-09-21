@@ -17,7 +17,7 @@ public class PatientRoom
     private int roomId;
     private String roomName;
     private String roomType;
-    private List patientList = new ArrayList();
+    private List<Patient> patientList = new ArrayList();
     private List associatedPersonel = new ArrayList();
 
     public PatientRoom() {}
@@ -60,12 +60,28 @@ public class PatientRoom
         this.patientList = patientList;
     }
 
+    public void addPatient(Patient patient) {
+        this.patientList.add(patient);
+    }
+
+    public void removePatient(Patient patient) {
+        this.patientList.remove(patient);
+    }
+
     public List getAssociatedPersonel() {
         return associatedPersonel;
     }
 
     public void setAssociatedPersonel(List associatedPersonel) {
         this.associatedPersonel = associatedPersonel;
+    }
+
+    public void addPersonel(HospitalEmploee emploee) {
+        this.associatedPersonel.add(emploee);
+    }
+
+    public void removePersonel(HospitalEmploee emploee) {
+        this.associatedPersonel.remove(emploee);
     }
 
 
