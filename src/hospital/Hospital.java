@@ -5,6 +5,7 @@
 package hospital;
 
 import hospital.util.List;
+import java.beans.XMLEncoder;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -20,7 +21,8 @@ import java.util.Scanner;
 public class Hospital {
     
     protected static final String HOSPITALOUT = "hospital.out";
-
+    protected static final String HOSPITALXML = "hospital.xml";
+    
     /**
      * @param args the command line arguments
      */
@@ -66,7 +68,7 @@ public class Hospital {
                     
                     break;
                 case 3 :
-                    saveToBinaryFile(list);
+                    saveAdXML(list);
                     break;
                 case 0:
                     break petla_glowna;
@@ -153,6 +155,18 @@ public class Hospital {
         
     }
 
+    public static void saveAdXML(List list) {
+        
+        try (XMLEncoder enc = new XMLEncoder(new FileOutputStream(HOSPITALXML))) {
+            
+            enc.writeObject(list);
+            enc.flush();
+            
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        
+    }
 
 
 }
