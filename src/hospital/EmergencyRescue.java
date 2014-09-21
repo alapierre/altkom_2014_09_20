@@ -13,6 +13,27 @@ package hospital;
 public class EmergencyRescue {
     private Ambulance ambulance;
    private int phoneNumber;
-  //  private duty;
+
+    @Override
+    public String toString() {
+        return "EmergencyRescue{" + "ambulance=" + ambulance + ", phoneNumber=" + phoneNumber + '}';
+    }
+
+    //  private duty;
+    public Ambulance getAmbulance() {
+        return ambulance;
+    }
+
+    public void setAmbulance(Ambulance ambulance) {
+        this.ambulance = ambulance;
+    }
+
+    public int getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
     
 }
