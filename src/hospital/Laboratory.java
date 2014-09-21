@@ -11,8 +11,13 @@ package hospital;
  * @author student
  */
 public class Laboratory {
-    String nazwa = new String();
-
+    private String nazwa = new String();
+    private Nurse nurse;
+    private Doctor doctor;
+    private Patient patient;
+    
+    
+    
     public void setNazwa(String nazwa) {
         this.nazwa = nazwa;
     }
