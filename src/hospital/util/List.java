@@ -8,13 +8,13 @@ package hospital.util;
  *
  * @author student
  */
-public class List implements Storage {
+public class List<T> implements Storage<T> {
 
     private Object[] tab = new Object[10];
     private int current;
     
     @Override
-    public void add(Object item) {
+    public void add(T item) {
         if(current >= tab.length ) {
             Object[] tmp = new Object[tab.length + 10];
             System.arraycopy(tab, 0, tmp, 0, tab.length);
@@ -26,8 +26,8 @@ public class List implements Storage {
     }
 
     @Override
-    public Object get(int idx) {
-        return tab[idx];
+    public T get(int idx) {
+        return (T)tab[idx];
     }
     
     public int size() {

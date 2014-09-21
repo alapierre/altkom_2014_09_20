@@ -8,10 +8,10 @@ package hospital.util;
  *
  * @author student
  */
-public interface Storage {
+public interface Storage<T> {
     
-    public void add(Object item);
+    public void add(T item);
     
-    public Object get(int idx);
+    public T get(int idx);
     
 }
