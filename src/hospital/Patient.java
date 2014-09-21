@@ -13,9 +13,9 @@ import java.util.Date;
  */
 public class Patient extends Person {
     
-    private ArrayList<Symptom> symptoms = new ArrayList<Symptom>();    
-    private ArrayList<Object> history = new ArrayList<Object>();    
-    private ArrayList<Object> alergies = new ArrayList<Object>();
+    private ArrayList<Symptom> symptoms = new ArrayList<>();    
+    private ArrayList<Object> history = new ArrayList<>();    
+    private ArrayList<Object> alergies = new ArrayList<>();
        
     private Object insurance;
     private Doctor attendingDoctor;
