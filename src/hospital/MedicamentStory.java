@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package hospital;
 
 /**
@@ -11,20 +10,17 @@ package hospital;
  * @author student
  */
 public class MedicamentStory {
+
     private Druggist druggist;
     private Recipe recipe;
     /*lekarstwo*/
-    private int Count;/*ilosc lekarstw*/
-    
-    
+    private int count;/*ilosc lekarstw*/
+
+
     public MedicamentStory() {
     }
-     
 
-     
-
-
-   public Druggist getDruggist() {
+    public Druggist getDruggist() {
         return druggist;
     }
 
@@ -44,5 +40,4 @@ public class MedicamentStory {
     public String toString() {
         return "MedicamentStory{" + "druggist=" + druggist + ", recipe=" + recipe + '}';
     }
-    
 }
