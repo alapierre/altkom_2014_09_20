@@ -42,7 +42,14 @@ public class Patient extends Person {
     }
         
     public void payBill() {
-             
+        if(insurance == null)
+        {
+            System.out.println("Zapłacono z własnej kieszeni");
+        }
+        else
+        {            
+            System.out.println("Zapłacono z ubezpieczenia");
+        }
     }
     
     public void takeMeds() {

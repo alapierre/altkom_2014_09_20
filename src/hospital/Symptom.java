@@ -11,9 +11,16 @@ package hospital;
 public class Symptom {
     
     private String name;
+    private String description;
 
-   
+    public String getDescription() {
+        return description;
+    }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
     public Symptom(String name) {
         this.name = name;
     }
@@ -25,10 +32,11 @@ public class Symptom {
     public String getName() {
         return name;
     }
-    
-     @Override
+
+    @Override
     public String toString() {
-        return "Symptom{" + "name=" + name + '}';
+        return "Symptom{" + "name=" + name + ", description=" + description + '}';
     }
+    
     
 }
