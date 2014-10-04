@@ -20,7 +20,7 @@ public class Patient extends Person {
        
     private Object insurance;
     private Doctor attendingDoctor;
-    private PatientRoom ward;
+private PatientRoom ward;
     private Menu dietPlan;
     
     private Date dateOfAdmission;

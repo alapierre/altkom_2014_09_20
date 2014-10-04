@@ -60,6 +60,14 @@ public class PatientDAOJdbc {
         
     }
     
+    public void delete(int id) throws SQLException {
+        String sql = "delete from person where id = ?";
+        PreparedStatement stmt = connection.prepareStatement(sql);
+        stmt.setInt(1, id);
+        
+        stmt.executeUpdate();
+    }
+    
     public int save(Patient patient) throws SQLException {
 
         String sql = "insert into person (name, last_name, pesel) "

@@ -64,4 +64,11 @@ public class PatientDAOJdbcTest {
         System.out.println(p);
         
     }
+    
+    @Test
+    public void testDelete() throws SQLException {
+        
+        dao.delete(2);
+        
+    }
 }
