@@ -4,7 +4,8 @@
  */
 package hospital;
 
-import hospital.util.List;
+import hospital.dao.PatientDAOJdbc;
+
 import java.beans.XMLEncoder;
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,6 +13,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -22,25 +27,21 @@ public class Hospital {
     
     protected static final String HOSPITALOUT = "hospital.out";
     protected static final String HOSPITALXML = "hospital.xml";
+    private static Connection conn;
+    
+    private static PatientDAOJdbc dao;
     
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
 
         File file = new File(HOSPITALOUT);
         
-        List<Patient> list = null;
+        conn = DriverManager.getConnection("jdbc:derby://localhost:1527/hospital", "sa", "sa");
+        dao = new PatientDAOJdbc(conn);
         
-        if(file.exists()) {
-            list = loadFromBinaryFile();
-            if(list == null) list = new List<>();
-            System.out.println("Ładuję dane");
-        } else {
-            list = new List<>();
-            
-            System.out.println("brak pliku z danymi");
-        }
+        List<Patient> list = dao.findAll();
         
         Scanner keyboard = new Scanner(System.in);
         
@@ -58,19 +59,21 @@ public class Hospital {
                 case 1:
                     Patient p = readPatientFromKeyboard(keyboard);
                     list.add(p);
+                    dao.save(p);
                     break;
                 case 2:
                     
-                    for(int i = 0; i < list.size() - 1; i++) {
+                    for(int i = 0; i < list.size(); i++) {
                         Patient tmp = list.get(i);
                         System.out.println(tmp.getName() + " " + tmp.getLastName());
                     }
                     
                     break;
                 case 3 :
-                    saveAdXML(list);
+                    System.out.println("auto save jest już włączony");;
                     break;
                 case 0:
+                    conn.close();
                     break petla_glowna;
                     
                 default:
